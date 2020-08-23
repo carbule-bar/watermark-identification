@@ -1,0 +1,19 @@
+去除水印
+ffmpeg -i logo1.mp4 -b:v 1321k -vf delogo=x=50:y=30:w=180:h=100  delogo.mp4
+
+-i 要处理的视频文件
+-b:v 设置视频比特率 默认为200k
+delogo 为滤镜
+x y 为水印图片到左上角的距离
+w h 为水印图片自身的宽和高
+
+
+ffmpeg -ss 0 -i 01.mp4 -y -f image2 -vframes 1 frame01.png
+
+xMin = a.x > d.x ? d.x : a.x; 1517
+xMax = b.x > c.x ? b.x : c.x; 1855
+
+yMin = a.y > b.y ? b.y : a.y; 42
+yMax = d.y > c.y ? d.y : c.y; 150
+
+ffmpeg -i 01.mp4 -b:v 1321k -vf delogo=x=1517:y=42:w=341:h=110 01_.mp4
